@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>FLINK</name>
+            <displayName>Flink</displayName>
+            <comment>Apache Flink is a streaming dataflow engine that provides data distribution, communication, and
+                fault tolerance for distributed computations over data streams.
+            </comment>
+            <version>1.9.1</version>
+            <components>
+                <component>
+                    <name>FLINK_CLIENT</name>
+                    <displayName>Flink Client</displayName>
+                    <category>CLIENT</category>
+                    <cardinality>1+</cardinality>
+                    <commandScript>
+                        <script>scripts/sample_client.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>600</timeout>
+                    </commandScript>
+                    <configFiles>
+                        <configFile>
+                            <type>xml</type>
+                            <fileName>flink-env.xml</fileName>
+                            <dictionaryName>flink-env</dictionaryName>
+                        </configFile>
+                        <configFile>
+                            <type>xml</type>
+                            <fileName>flink-ambari-config.xml</fileName>
+                            <dictionaryName>flink-ambari-config</dictionaryName>
+                        </configFile>
+                    </configFiles>
+                </component>
+            </components>
+            <osSpecifics>
+                <osSpecific>
+                    <osFamily>any</osFamily>
+                </osSpecific>
+            </osSpecifics>
+            <configuration-dependencies>
+                <config-type>flink-ambari-config</config-type>
+                <config-type>flink-conf</config-type>
+            </configuration-dependencies>
+            <restartRequiredAfterChange>true</restartRequiredAfterChange>
+        </service>
+    </services>
+</metainfo>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+ 
+<configuration>
+
+  <!-- params for service -->
+
+  <property>
+    <name>flink_install_dir</name>
+    <value>/opt/flink</value>
+    <description>Location to install Flink</description>
+  </property> 
+
+  <property>
+    <name>hadoop_conf_dir</name>
+    <value>/etc/hadoop/conf</value>
+    <description>Hadoop conf dir. Needed to submit to YARN</description>
+  </property>
+</configuration>

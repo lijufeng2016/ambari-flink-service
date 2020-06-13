@@ -1,26 +1,22 @@
 #!/usr/bin/env python
 from resource_management import *
 from resource_management.libraries.script.script import Script
-from resource_management.libraries.functions.default import default
-
+import commands
 
 # server configuration
 config = Script.get_config()
-base_dir = "/opt/flink/"
+cmd = "/usr/bin/hdp-select versions"
+hdp_base_dir = '/usr/hdp/' + commands.getoutput(cmd)
+flink_install_dir = hdp_base_dir + '/flink'
 
-flink_archive_file = 'flink-1.9.1-bin-scala_2.11.tgz'
-
-stack_name = default("/hostLevelParams/stack_name", None)
-stack_version = config['hostLevelParams']['stack_version']
-
-# flink archive on agent nodes
-flink_package_dir = "/var/lib/ambari-agent/cache/stacks/HDP/2.6/services/FLINK/package/"
+flink_download_url = config['configurations']['flink-ambari-config']['flink_download_uri']
 
 # params from flink-ambari-config
-flink_install_dir = config['configurations']['flink-ambari-config']['flink_install_dir']
-hadoop_conf_dir = config['configurations']['flink-ambari-config']['hadoop_conf_dir']
+hadoop_conf_dir = '/etc/hadoop/conf'
 
 # params from flink-conf.yaml
-flink_yaml_content = config['configurations']['flink-env']['content']
+flink_yaml_content = config['configurations']['flink-env']['flink-conf.yaml']
 flink_dependency_jar = config['configurations']['flink-env']['flink_dependency_jar']
 
+# log4j
+flink_log4j = config['configurations']['flink-env']['log4j.properties']

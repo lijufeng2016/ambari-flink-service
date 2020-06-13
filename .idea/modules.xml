@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ambari-flink-service-master.iml" filepath="$PROJECT_DIR$/.idea/ambari-flink-service-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ambari-flink-service.iml" filepath="$PROJECT_DIR$/.idea/ambari-flink-service.iml" />
     </modules>
   </component>
 </project>

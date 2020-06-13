@@ -1,19 +1,11 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
- 
+
 <configuration>
+    <property>
+        <name>flink_download_uri</name>
+        <value>http://recessw-hdp3-manager001/hdp/install/flink-1.10.1-bin-scala_2.11.tgz</value>
+        <description>flink download uri</description>
+    </property>
 
-  <!-- params for service -->
-
-  <property>
-    <name>flink_install_dir</name>
-    <value>/opt/flink</value>
-    <description>Location to install Flink</description>
-  </property> 
-
-  <property>
-    <name>hadoop_conf_dir</name>
-    <value>/etc/hadoop/conf</value>
-    <description>Hadoop conf dir. Needed to submit to YARN</description>
-  </property>
 </configuration>

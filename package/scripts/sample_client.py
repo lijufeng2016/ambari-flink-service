@@ -22,6 +22,7 @@ class SampleClient(Script):
 
     cmd = '/bin/ln' + ' -s  {0} /usr/hdp/current/flink'.format(params.flink_install_dir)
     Execute(cmd)
+    Execute("hadoop fs -put {0}/lib/* {1}/*".format(params.flink_install_dir,params.flink_dependency_jar))
     self.configure(env)
 
 

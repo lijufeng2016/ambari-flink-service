@@ -4,7 +4,7 @@
 <configuration>
     <property>
         <name>flink_download_uri</name>
-        <value>http://recessw-hdp3-manager001/hdp/install/flink-1.10.1-bin-scala_2.11.tgz</value>
+        <value>http://xxxxxxxxxxxxx/hdp/install/flink-1.10.1-bin-scala_2.11.tgz</value>
         <description>flink download uri</description>
     </property>
 
